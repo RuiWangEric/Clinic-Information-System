@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Clinic xmlns:tns="http://www.example.org/schemas/clinic" 
+xmlns:tns1="http://www.example.org/schemas/clinic/patient" 
+xmlns:tns2="http://www.example.org/schemas/clinic/clinic_ids" 
+xmlns:tns3="http://www.example.org/schemas/clinic/treatment" 
+xmlns:tns4="http://www.example.org/schemas/clinic/provider" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.example.org/schemas/clinic Clinic.xsd ">
+  <tns1:Patient>
+    <tns1:patient-id>001</tns1:patient-id>
+    <tns1:name>Tom</tns1:name>
+    <tns1:dob>1991-01-01</tns1:dob>
+    <tns3:treatment>
+      <tns3:privider-id>1001</tns3:privider-id>
+      <tns3:diagnosis>headache</tns3:diagnosis>
+      <tns3:drug-treatment>
+        <tns3:name>sh</tns3:name>
+        <tns3:dosage>1.0</tns3:dosage>
+        <tns3:physician>Andres_Contreras</tns3:physician>
+      </tns3:drug-treatment>
+    </tns3:treatment>
+  </tns1:Patient>
+  
+  
+  <tns4:Provider>
+    <tns4:provider-id>1001</tns4:provider-id>
+    <tns4:name>liuxiao</tns4:name>
+    <tns4:specialization>Radiology</tns4:specialization>
+  </tns4:Provider>
+  
+  
+  
+  
+  
+  
+  
+    <tns1:Patient>
+    <tns1:patient-id>002</tns1:patient-id>
+    <tns1:name>Alex</tns1:name>
+    <tns1:dob>1992-01-01</tns1:dob>
+    <tns3:treatment>
+      <tns3:privider-id>1002</tns3:privider-id>
+      <tns3:diagnosis>chronic bronchitis</tns3:diagnosis>
+      <tns3:drug-treatment>
+        <tns3:name>appendicitis</tns3:name>
+        <tns3:dosage>0.5</tns3:dosage>
+        <tns3:physician>Eric</tns3:physician>
+      </tns3:drug-treatment>
+    </tns3:treatment>
+  </tns1:Patient>
+  
+  
+  <tns4:Provider>
+    <tns4:provider-id>1002</tns4:provider-id>
+    <tns4:name>zxj</tns4:name>
+    <tns4:specialization>Oncology</tns4:specialization>
+  </tns4:Provider>
+  
+  
+  
+  
+  
+  
+  
+    <tns1:Patient>
+    <tns1:patient-id>003</tns1:patient-id>
+    <tns1:name>zz</tns1:name>
+    <tns1:dob>1997-01-01</tns1:dob>
+    <tns3:treatment>
+      <tns3:privider-id>1003</tns3:privider-id>
+      <tns3:diagnosis>hurt</tns3:diagnosis>
+      <tns3:drug-treatment>
+        <tns3:name>aspirin</tns3:name>
+        <tns3:dosage>2.0</tns3:dosage>
+        <tns3:physician>michael</tns3:physician>
+      </tns3:drug-treatment>
+    </tns3:treatment>
+  </tns1:Patient>
+  
+  
+  <tns4:Provider>
+    <tns4:provider-id>1003</tns4:provider-id>
+    <tns4:name>xx</tns4:name>
+    <tns4:specialization>Surgery</tns4:specialization>
+  </tns4:Provider>
+  
+</tns:Clinic>

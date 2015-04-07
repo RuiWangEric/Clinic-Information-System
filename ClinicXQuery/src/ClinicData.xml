@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clin:Clinic 
+xmlns:cids="http://www.example.org/schemas/clinic/clinic_ids" 
+xmlns:clin="http://www.example.org/schemas/clinic" 
+xmlns:pat="http://www.example.org/schemas/clinic/patient" 
+xmlns:prov="http://www.example.org/schemas/clinic/provider" 
+xmlns:trmt="http://www.example.org/schemas/clinic/treatment" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.example.org/schemas/clinic Clinic.xsd ">
+	<pat:Patient>
+		<pat:patient-id>12345678</pat:patient-id>
+		<pat:name>Jane joe</pat:name>
+		<pat:dob>1995-03-21</pat:dob>
+		<trmt:treatment>
+			<trmt:provider-id>78653299</trmt:provider-id>
+			<trmt:diagnosis>migraine</trmt:diagnosis>
+			<trmt:drug-treatment>
+				<trmt:name>relpax</trmt:name>
+				<trmt:dosage>35.0</trmt:dosage>
+				<trmt:physician>Eric</trmt:physician>
+			</trmt:drug-treatment>
+		</trmt:treatment>
+	</pat:Patient>
+	<pat:Patient>
+		<pat:patient-id>45239865</pat:patient-id>
+		<pat:name>Harrison Ford</pat:name>
+		<pat:dob>1990-05-09</pat:dob>
+		<trmt:treatment>
+			<trmt:provider-id>67432609</trmt:provider-id>
+			<trmt:diagnosis>hiv/aids</trmt:diagnosis>
+			<trmt:drug-treatment>
+				<trmt:name>art</trmt:name>
+				<trmt:dosage>78.0</trmt:dosage>
+				<trmt:physician>Tom</trmt:physician>
+			</trmt:drug-treatment>
+		</trmt:treatment>
+		<trmt:treatment>
+			<trmt:provider-id>23409678</trmt:provider-id>
+			<trmt:diagnosis>cancer</trmt:diagnosis>
+			<trmt:radiology>
+				<trmt:date>2012-03-01</trmt:date>
+				<trmt:date>2001-04-01</trmt:date>
+				<trmt:date>2001-05-01</trmt:date>
+				<trmt:radiologist>Pink</trmt:radiologist>
+			</trmt:radiology>
+			
+		</trmt:treatment>
+	</pat:Patient>
+	<pat:Patient>
+		<pat:patient-id>65432987</pat:patient-id>
+		<pat:name>Mark Hamill</pat:name>
+		<pat:dob>1993-02-14</pat:dob>
+		<trmt:treatment>
+			<trmt:provider-id>67432609</trmt:provider-id>
+			<trmt:diagnosis>migraine</trmt:diagnosis>
+			<trmt:drug-treatment>
+				<trmt:name>asipilin</trmt:name>
+				<trmt:dosage>15.0</trmt:dosage>
+				<trmt:physician>Obama</trmt:physician>
+			</trmt:drug-treatment>
+		</trmt:treatment>
+	</pat:Patient>
+	<pat:Patient>
+		<pat:patient-id>45671234</pat:patient-id>
+		<pat:name>David Prowse</pat:name>
+		<pat:dob>1989-10-31</pat:dob>
+		<trmt:treatment>
+			<trmt:provider-id>78653299</trmt:provider-id>
+			<trmt:diagnosis>appendicitis</trmt:diagnosis>
+			<trmt:surgery>
+				<trmt:date>2012-06-15</trmt:date>
+				<trmt:surgeon>Mark</trmt:surgeon>
+			</trmt:surgery>
+			
+		</trmt:treatment>
+	</pat:Patient>
+	<prov:Provider>
+		<prov:provider-id>78653299</prov:provider-id>
+		<prov:name>Irving Kershner</prov:name>
+		<prov:specialization>Surgery</prov:specialization>
+	</prov:Provider>
+	<prov:Provider>
+		<prov:provider-id>67432609</prov:provider-id>
+		<prov:name>Gary Kurthz</prov:name>
+		<prov:specialization>Internist</prov:specialization>
+	</prov:Provider>
+	<prov:Provider>
+		<prov:provider-id>23409678</prov:provider-id>
+		<prov:name>George Lucas</prov:name>
+		<prov:specialization>Radiology</prov:specialization>
+	</prov:Provider></clin:Clinic>

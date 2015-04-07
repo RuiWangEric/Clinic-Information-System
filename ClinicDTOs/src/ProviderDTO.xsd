@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema targetNamespace="http://www.example.org/clinic/schemas/provider" 
+	jaxb:version="2.0"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://www.example.org/clinic/schemas/provider">
+	
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings>
+				<jaxb:javaType
+					name="java.util.Date"
+					xmlType="date"
+					parseMethod="edu.stevens.cs548.clinic.service.dto.DateAdapter.parseDate"
+					printMethod="edu.stevens.cs548.clinic.service.dto.DateAdapter.printDate"
+				/>
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+	
+	<element name="providerDTO">
+		<complexType>
+			<sequence>
+				<element name="id" type="long" />
+				<element name="npi" type="long" />
+				<element name="name" type="string" />
+				<element name="providerType" type="string" />
+				<element name="treatments" type="long" nillable="true"
+					minOccurs="0" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>

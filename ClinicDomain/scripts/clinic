@@ -1,0 +1,96 @@
+
+#Define clinic in N3
+
+@prefix clinic: <http://cs548.stevens.edu/clinic/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3c.org/2001/XMLSchema-datatypes>.
+
+@prefix patient: <http://cs548.stevens.edu/clinic/patient/>.
+@prefix provider: <http://cs548.stevens.edu/clinic/provider/>.
+@prefix treatment: <http://cs548.stevens.edu/clinic/treatment/>.
+@prefix drugTreatment: <http://cs548.stevens.edu/clinic/treatment/drugTreatment/>.
+@prefix surgery: <http://cs548.stevens.edu/clinic/treatment/surgery/>.
+@prefix radiology: <http://cs548.stevens.edu/clinic/treatment/radiology/>.
+
+
+clinic:patient a owl:Class.
+patient:id a rdf:Property;
+	    rdfs:domain clinic:patient.
+patient:patientId a rdf:Property;
+		rdfs:domain clinic:patient;
+			 a owl:FunctionalProperty,
+			   owl:inverseFunctionalProperty.
+patient:name a rdf:Property;
+	    rdfs:domain clinic:patient.
+patient:birthDate a rdf:Property;
+		rdfs:domain clinic:patient.
+patient:age a rdf:Property;
+	    rdfs:domain clinic:patient.
+patient:treatments a rdf:Property;
+	    rdfs:domain clinic:patient.
+
+
+clinic:provider a owl:Class.
+provider:NPI a rdf:Property;
+	     rdfs:domain clinic:provider;
+	     a owl:FunctionalProperty,
+		   owl:inverseFunctionalProperty.
+provider:name a rdf:Property;
+	     rdfs:domain clinic:provider.
+provider:specialization a rdf:Property;
+		 rdfs:domain clinic:provider.
+provider:treatments a rdf:Property;
+		 rdfs:domain clinic:provider.
+
+
+clinic:treatment a owl:Class.
+treatment:treatmentId a rdf:Property;
+	   	  rdfs:domain clinic:treatment.
+provider:NPI a rdf:Property;
+	     rdfs:domain clinic:provider.
+patient:patientId a rdf:Property;
+		rdfs:domain clinic:patient.
+treatment:diagnosis a rdf:Property;
+		  rdfs:domain clinic:treatment.
+
+
+provider:Surgeons a clinic:provider.
+provider:Radiologists a clinic:provider. 
+provider:Internists a clinic:provider.
+
+
+clinic:surgery a owl:Class;
+	   rdfs:subClassOf clinic:treatment.
+
+
+clinic:radiology a owl:Class;
+	   rdfs:subClassOf clinic:treatment.
+
+clinic:drugTreatment a owl:Class;
+       rdfs:subClassOf clinic:treatment.
+
+
+treatment:ProvidedBy a owl:FunctionalProperty;
+	      rdfs:domain clinic:provider.
+
+
+treatment:ReceivedBy a owl:FunctionalProperty;
+	      rdfs:domain clinic:patient.
+
+
+treatment:RadiologistProvided a owl:FunctionalProperty;
+	      rdfs:domain provider:Radiologist.
+
+
+treatment:receive a rdf:Property;
+		  rdfs:domain clinic:treatment;
+		  owl:inverseOf treatment:ReceivedBy.
+provider:Radiologist owl:equivalentClass[
+a owl:Restriction;
+owl:onProperty treatment:receive;
+owl:someValuesFrom clinic:treamtent
+].
+
+
